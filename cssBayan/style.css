@@ -57,7 +57,7 @@ input {
 
 .meme-input:checked ~ .accordion__item__img-container > .img {
   transform: scale(1);
-  max-height: 30rem;
+  max-height: 40rem;
 }
 .meme-input:checked ~ .accordion__item--text > .accordion__item--icon {
   rotate: 45deg;
@@ -68,13 +68,23 @@ input {
 }
 
 @media screen and (min-width: 1280px) {
+  .img {
+    display: block;
+    width: 40%;
+  }
+  .meme-input:hover ~ .accordion__item__img-container > .img {
+    transform: scale(1);
+    max-height: 300rem;
+  }
+  .meme-input:hover ~ .accordion__item--text > .accordion__item--icon {
+    rotate: 45deg;
+  }
   .accordion__item--icon {
     opacity: 0;
   }
   .accordion:hover .accordion__item--icon {
     opacity: 1;
   }
-
   .accordion:hover .accordion__item--text {
     color: #000000;
   }
