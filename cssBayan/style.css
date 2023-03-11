@@ -8,16 +8,20 @@
 	font-size: 2rem;
    font-weight: bold;
  }
- input[type="radio" i] {
-	opacity: 0;
+ input {
+	width: 0;
 	height: 0;
-	visibility: hidden;
+	appearance: none;
+	display: none;
  }
  .accordion{
 	max-width: 80%;
 	margin: 0 auto;
  }
  .accordion__item{
+	border-top: 0.02rem solid gray;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
 	cursor: pointer;
  }
  .accordion__item--text{
@@ -25,25 +29,53 @@
 	justify-content: space-between;
 	color: #0059D8;
 	font-size: 1.5rem;
-	line-height: 3rem;
 	font-weight: 800;
-	border-top: 0.02rem solid gray;
+	cursor: pointer;
+	transition: all 0.4s ease;
+ }
+ .accordion__item--label{
+	cursor: pointer;
  }
  .accordion__item--icon{
 	align-items: center;
-	opacity: 0;
 	background-image: url('./assets/img/plus-svgrepo-com.svg');
-	background-size: 1.25rem;
-	width: 6%;
+	width: 2rem;
 	background-position: center;
+	background-size: 1.25rem;
 	background-repeat: no-repeat;
+	transition: all .4s ease-out;
  }
- .accordion__item__img-container{
-	align-items: center;
- }
+
  .img{
 	display: block;
 	width: 60%;
 	margin: 0 auto;
-	margin-bottom: 2rem;
+	transition: all .4s ease-out;
+	transform: scale(0.01);
+	max-height: 0em;
  }
+
+ .meme-input:checked ~ .accordion__item__img-container > .img {
+	transform: scale(1);
+	max-height: 30rem;
+}
+.meme-input:checked ~ .accordion__item--text > .accordion__item--icon{
+	rotate: 45deg;
+}
+
+.meme-input:checked ~ .accordion__item--text {
+	color: #000000;
+}
+
+@media screen and (min-width: 1280px){
+	.accordion__item--icon{
+		opacity: 0;
+	 }
+	.accordion:hover .accordion__item--icon {
+		opacity: 1;
+	 }
+	
+	 .accordion:hover .accordion__item--text{
+		color: #000000;
+	 }
+}
