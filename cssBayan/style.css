@@ -1,0 +1,117 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+body {
+  background-color: #f5f5eb;
+  font-family: "Inter", Verdana, sans-serif;
+  font-weight: normal;
+  margin: 0px;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+input {
+  width: 0;
+  height: 0;
+  appearance: none;
+  display: none;
+}
+.accordion {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.accordion__item {
+  border-top: 0.02rem solid gray;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  cursor: pointer;
+}
+.accordion__item--label {
+  color: #0059d8;
+  font-size: 1.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.label__text--container {
+  display: flex;
+  justify-content: space-between;
+}
+.label__text {
+  transition: all 0.4s ease;
+}
+.accordion__item--icon {
+  align-items: center;
+  background-image: url("./assets/img/plus-svgrepo-com.svg");
+  width: 2rem;
+  background-position: center;
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-out;
+}
+.img {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  transition: all 0.6s ease-out;
+  transform: scale(0.01);
+  max-height: 0em;
+}
+.meme-input:checked ~ .accordion__item--label .img {
+  transform: scale(1);
+  max-height: 40rem;
+}
+.meme-input:checked ~ .accordion__item--label .accordion__item--icon {
+  rotate: 45deg;
+}
+.meme-input:checked ~ .accordion__item--label {
+  color: #000000;
+}
+.meme-input:active ~ .accordion__item--label .img {
+  opacity: 0.7;
+}
+.meme-input:active ~ .accordion__item--label .label__text {
+  color: #0059d8;
+}
+
+@media (hover: hover) {
+  .meme-input:hover ~ .accordion__item--label .img {
+    transform: scale(1);
+    max-height: 40rem;
+  }
+  .meme-input:hover ~ .accordion__item--label .accordion__item--icon {
+    rotate: 45deg;
+  }
+  .accordion__item--icon {
+    opacity: 0;
+  }
+  .accordion:hover .accordion__item--icon {
+    opacity: 1;
+  }
+  .accordion:hover .accordion__item--label {
+    color: #000000;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .img {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 8px;
+  }
+}
