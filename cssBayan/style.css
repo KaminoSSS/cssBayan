@@ -103,3 +103,15 @@ input {
     width: 40%;
   }
 }
+
+@media screen and (max-width: 560px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 8px;
+  }
+}
